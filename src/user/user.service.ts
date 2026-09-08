@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service.js';
 import type { Prisma, User } from '../generated/prisma/client.js';
+import * as bcrypt from 'bcrypt';
 
-
+// o servce é responsável por fazer a lógica de negócio, ele é chamado pelo controller, que é responsável por receber as requisições e enviar para o service
 
 @Injectable()
 export class UserService {
@@ -17,8 +18,9 @@ export class UserService {
         });
     }
     async createUser(data: Prisma.UserCreateInput) {
+        const hashPassword = await bcrypt.hash(data.password, 10);
         return this.prisma.user.create({
-            data,
+            data: { ...data, password: hashPassword },
         });
     }
 

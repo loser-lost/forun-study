@@ -4,9 +4,14 @@ import { AuthModule } from './auth/auth.module.js';
 import { UserModule } from './user/user.module.js';
 import { DatabaseModule } from './database/database.module.js';
 
+import { ConfigModule } from '@nestjs/config';
+
+
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
 @Module({
-  imports: [AuthModule, UserModule, DatabaseModule]
+  imports: [
+    ConfigModule.forRoot({isGlobal: true}),
+    AuthModule, UserModule, DatabaseModule]
 })
 export class AppModule {}
