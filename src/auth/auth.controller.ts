@@ -1,4 +1,4 @@
-import { Body, Controller, Inject, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Inject, Post } from '@nestjs/common';
 import type { Prisma, User } from '../generated/prisma/client.js';
 import { AuthService } from './auth.service.js';
 
@@ -9,6 +9,7 @@ export class AuthController {
     private readonly authService: AuthService;
 
     @Post('signin')
+    @HttpCode(HttpStatus.OK)
     async signin(@Body() body: Prisma.UserCreateInput) {
         return this.authService.signIn(body);
         
