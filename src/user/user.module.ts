@@ -7,5 +7,6 @@ import { DatabaseModule } from '../database/database.module.js';
   imports: [DatabaseModule],
   controllers: [UserController],
   providers: [UserService],
+  exports: [UserService], //exportando o UserService para que ele possa ser usado em outros módulos, como o AuthModule
 })
 export class UserModule {}
