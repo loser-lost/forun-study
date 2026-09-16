@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import type { Prisma, User } from '../generated/prisma/client.js';
 import { UserService } from './user.service.js';
 import { AuthGuard } from '../auth/auth.guard.js';
@@ -23,7 +23,7 @@ export class UserController {
     }
 
     @UseGuards(AuthGuard) // rota protegida por autenticação
-    @Put(':id')
+    @Patch(':id')
     async updateUser(
         @Body() userData: Prisma.UserUpdateInput,
         @Param('id') id: string
