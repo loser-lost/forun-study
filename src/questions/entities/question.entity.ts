@@ -1,1 +1,8 @@
-export class Question {}
+export class Question implements Question {
+    id: number;
+    title: string;
+    content: string;
+    createdAt: Date;
+    updatedAt: Date;
+    userId: number;
+}

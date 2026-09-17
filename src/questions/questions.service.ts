@@ -2,7 +2,6 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateQuestionDto } from './dto/create-question.dto.js';
 import { UpdateQuestionDto } from './dto/update-question.dto.js';
 import { PrismaService } from '../database/prisma.service.js';
-import type { Prisma } from '../generated/prisma/client.js';
 
 @Injectable()
 export class QuestionsService {
@@ -10,8 +9,7 @@ export class QuestionsService {
    @Inject()
       private readonly prisma: PrismaService;// injeção de dependência do prisma service para o user service
 
-  async create(createQuestionDto: CreateQuestionDto) {
-    const userId = 1; // Substitua pelo ID do usuário autenticado
+  async create(createQuestionDto: CreateQuestionDto, userId: number) {
     return await this.prisma.question.create({
       data: { ...createQuestionDto, userId},
     })
