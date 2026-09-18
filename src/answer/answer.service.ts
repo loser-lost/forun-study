@@ -10,11 +10,11 @@ export class AnswerService {
     private readonly prisma: PrismaService;// injeção de dependência do prisma service para o user service
 
 
-  create(createAnswerDto: CreateAnswerDto, userId: number, questionId: number) {
+  create(createAnswerDto: CreateAnswerDto, req: any, questionId: number) {
     
     const newAswer = {
       content: createAnswerDto.content,
-      userId: userId,
+      userId: req.sub,
       questionId: questionId
     } 
     return this.prisma.answer.create({

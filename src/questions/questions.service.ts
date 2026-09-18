@@ -9,9 +9,9 @@ export class QuestionsService {
    @Inject()
       private readonly prisma: PrismaService;// injeção de dependência do prisma service para o user service
 
-  async create(createQuestionDto: CreateQuestionDto, userId: number) {
+  async create(createQuestionDto: CreateQuestionDto, req: any) {
     return await this.prisma.question.create({
-      data: { ...createQuestionDto, userId},
+      data: { ...createQuestionDto, userId: req.sub },
     })
   }
 

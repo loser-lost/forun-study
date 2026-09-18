@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards,Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards,Request, ParseIntPipe } from '@nestjs/common';
 import { AnswerService } from './answer.service.js';
 import { CreateAnswerDto } from './dto/create-answer.dto.js';
 import { UpdateAnswerDto } from './dto/update-answer.dto.js';
@@ -9,8 +9,8 @@ export class AnswerController {
   constructor(private readonly answerService: AnswerService) {}
 
   @UseGuards(AuthGuard)
-  @Post(":questionId")
-  create(@Body() createAnswerDto: CreateAnswerDto, @Request() req: any, @Param('questionId') questionId: number) {
+  @Post(':questionId')
+  create(@Body() createAnswerDto: CreateAnswerDto, @Request() req: any, @Param('questionId', ParseIntPipe) questionId: number,) {
     return this.answerService.create(createAnswerDto, req.sub, questionId);
   }
 
