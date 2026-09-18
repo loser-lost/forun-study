@@ -18,7 +18,7 @@ export class UserController {
 
     @UseGuards(AuthGuard) // rota protegida por autenticação
     @Get(':id') // rota para listar um usuário específico
-    async getUser(@Param('id') id: string): Promise<User | null> {
+    async getUser(@Param('id') id: string): Promise<Omit<User, 'password'> | null> {
         return this.userService.User({ id: Number(id)});
     }
 
