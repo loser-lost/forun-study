@@ -22,19 +22,19 @@ export class AnswerController {
 
   @UseGuards(AuthGuard)
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.answerService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.answerService.findOne(id);
   }
 
   @UseGuards(AuthGuard)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAnswerDto: UpdateAnswerDto) {
-    return this.answerService.update(+id, updateAnswerDto);
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateAnswerDto: UpdateAnswerDto) {
+    return this.answerService.update(id, updateAnswerDto);
   }
 
   @UseGuards(AuthGuard)
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.answerService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.answerService.remove(id);
   }
 }

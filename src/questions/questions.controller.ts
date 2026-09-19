@@ -25,12 +25,12 @@ export class QuestionsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateQuestionDto: UpdateQuestionDto) {
-    return this.questionsService.update(+id, updateQuestionDto);
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateQuestionDto: UpdateQuestionDto) {
+    return this.questionsService.update(id, updateQuestionDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.questionsService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.questionsService.remove(id);
   }
 }

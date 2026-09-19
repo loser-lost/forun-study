@@ -1,6 +1,6 @@
 # 💬 Forum Study API
 
-Uma API RESTful simplificada de fórum desenvolvida com **NestJS**, focada em estudos e boas práticas de desenvolvimento back-end, autenticação e testes automatizados.
+Uma API RESTful simplificada de fórum desenvolvida com **NestJS**, focada em estudos e boas práticas de desenvolvimento back-end, autenticação.
 
 ## 🚀 Sobre o Projeto
 
