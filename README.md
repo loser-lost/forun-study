@@ -75,35 +75,6 @@ A aplicação simula a estrutura básica de um fórum de perguntas e respostas, 
    ```
    A aplicação estará disponível em `http://localhost:3000`.
 
-## 🧪 Testes e Qualidade de Código
-
-O projeto utiliza **Vitest** para a execução de testes unitários e de integração (E2E), e **Oxlint** para análise estática de código.
-
-* **Rodar os testes unitários:**
-  ```bash
-  npm run test
-  ```
-* **Rodar os testes em modo watch:**
-  ```bash
-  npm run test:watch
-  ```
-* **Rodar os testes de integração (E2E):**
-  ```bash
-  npm run test:e2e
-  ```
-* **Verificar a cobertura de testes:**
-  ```bash
-  npm run test:cov
-  ```
-* **Executar o Linter (Oxlint):**
-  ```bash
-  npm run lint
-  ```
-* **Formatar o código (Prettier):**
-  ```bash
-  npm run format
-  ```
-
 ## 📜 Licença e Créditos
 
 Este projeto é voltado exclusivamente para fins de estudo e aprendizado, baseado nas aulas ministradas na [playlist/videoaula no YouTube NestJs Na Prática](https://www.youtube.com/watch?v=ZJ1Y7BnUmvY&list=PLR8JXremim5AdjhggWtqzgSXPYZ_V9x2b&index=15).
