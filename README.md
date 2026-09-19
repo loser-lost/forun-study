@@ -21,17 +21,16 @@ A aplicação simula a estrutura básica de um fórum de perguntas e respostas, 
 * **ORM / Banco de Dados:** [Prisma ORM](https://www.prisma.io/) + [SQLite](https://www.sqlite.org/) (`better-sqlite3`)
 * **Autenticação:** JWT (`@nestjs/jwt`) + `bcrypt`
 * **Validação de Entrada:** [class-validator](https://github.com/typestack/class-validator) + [class-transformer](https://github.com/typestack/class-transformer)
-* **Testes:** [Vitest](https://vitest.dev/) (Unitários e E2E)
 * **Linter & Formatação:** [Oxlint](https://oxc-project.github.io/) + [Prettier](https://prettier.io/)
 
 ## 📌 Funcionalidades & Endpoints Base
 
 ### 🔐 Autenticação (`/auth`)
-* `POST /auth/register` - Cadastro de novos usuários
-* `POST /auth/login` - Autenticação e emissão do token JWT
+* `POST /auth/signin` - Autenticação e emissão do token JWT
 
 ### 👤 Usuários (`/users`)
-* `GET /users/me` - Retorna os dados do usuário autenticado
+* `POST /user` - Cadastro de novos usuários
+* `GET /users` - Retorna os dados do usuário autenticado
 
 ### ❓ Perguntas (`/questions`)
 * `GET /questions` - Lista todas as perguntas
@@ -40,8 +39,8 @@ A aplicação simula a estrutura básica de um fórum de perguntas e respostas, 
 * `DELETE /questions/:id` - Remove uma pergunta do usuário
 
 ### 💬 Respostas (`/answers`)
-* `POST /questions/:questionId/answers` - Adiciona uma resposta a uma pergunta *(Requer autenticação)*
-* `GET /questions/:questionId/answers` - Lista respostas de uma pergunta
+* `POST /answer/:questionId` - Adiciona uma resposta a uma pergunta *(Requer autenticação)*
+* `PATCH /answer/:id` - Lista respostas de uma pergunta
 
 ## ⚙️ Como executar o projeto
 
