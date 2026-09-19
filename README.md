@@ -1,6 +1,6 @@
 # 💬 Forum Study API
 
-Uma API RESTful simplificada de fórum desenvolvida com **NestJS**, focada em estudos e boas práticas de desenvolvimento back-end, autenticação.
+Uma API RESTful simplificada de fórum desenvolvida com **NestJS**, focada em estudos e boas práticas de desenvolvimento back-end, autenticação e validação de dados.
 
 ## 🚀 Sobre o Projeto
 
@@ -12,6 +12,7 @@ A aplicação simula a estrutura básica de um fórum de perguntas e respostas, 
 * **Usuários (`Users`):** Gerenciamento de usuários da plataforma.
 * **Perguntas (`Questions`):** Criação, edição, listagem e exclusão de perguntas.
 * **Respostas (`Answers`):** Envio e gerenciamento de respostas vinculadas às perguntas.
+* **Validação de Dados:** Garantia de integridade e sanitização das requisições via DTOs com `class-validator`.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -19,6 +20,7 @@ A aplicação simula a estrutura básica de um fórum de perguntas e respostas, 
 * **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
 * **ORM / Banco de Dados:** [Prisma ORM](https://www.prisma.io/) + [SQLite](https://www.sqlite.org/) (`better-sqlite3`)
 * **Autenticação:** JWT (`@nestjs/jwt`) + `bcrypt`
+* **Validação de Entrada:** [class-validator](https://github.com/typestack/class-validator) + [class-transformer](https://github.com/typestack/class-transformer)
 * **Testes:** [Vitest](https://vitest.dev/) (Unitários e E2E)
 * **Linter & Formatação:** [Oxlint](https://oxc-project.github.io/) + [Prettier](https://prettier.io/)
 
